@@ -8,11 +8,11 @@ namespace Tetris
 {
      class Point
     {
-        int x;
-        int y;
-        char c;
+       public int x;
+       public int y;
+       public char c;
 
-        void Draw()
+        public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.WriteLine(c);

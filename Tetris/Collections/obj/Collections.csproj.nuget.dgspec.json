@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\СухаревАндрей\\Source\\Repos\\Tetris\\Tetris\\Tetris\\Tetris.csproj": {
+    "C:\\Users\\СухаревАндрей\\source\\repos\\Tetris\\Tetris\\Tetris\\Tetris.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\СухаревАндрей\\Source\\Repos\\Tetris\\Tetris\\Tetris\\Tetris.csproj",
+        "projectUniqueName": "C:\\Users\\СухаревАндрей\\source\\repos\\Tetris\\Tetris\\Tetris\\Tetris.csproj",
         "projectName": "Tetris",
-        "projectPath": "C:\\Users\\СухаревАндрей\\Source\\Repos\\Tetris\\Tetris\\Tetris\\Tetris.csproj",
+        "projectPath": "C:\\Users\\СухаревАндрей\\source\\repos\\Tetris\\Tetris\\Tetris\\Tetris.csproj",
         "packagesPath": "C:\\Users\\СухаревАндрей\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\СухаревАндрей\\Source\\Repos\\Tetris\\Tetris\\Tetris\\obj\\",
+        "outputPath": "C:\\Users\\СухаревАндрей\\source\\repos\\Tetris\\Tetris\\Tetris\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\СухаревАндрей\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -10,26 +10,51 @@ namespace Tetris
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
 
-            int x1 = 2;
-            int y1 = 3;
-            char c1 = '*';
-            
+                    
+            Square s = new Square(2, 5, '*');
+            s.Draw();
 
-            Draw(x1, y1, c1);
+            Thread.Sleep(1000);
+            s.Hide();
+            s.Move(Direction.LEFT);
+            s.Draw();
+            Thread.Sleep(1000);
+            s.Hide();
+            s.Move(Direction.DOWN);
+            s.Draw();
+            Thread.Sleep(1000);
+            s.Hide();
+            s.Move(Direction.DOWN);
+            s.Draw();
+            Thread.Sleep(1000);
+            s.Hide();
+            s.Move(Direction.RIGHT);
+            s.Draw();
+            Thread.Sleep(1000);
+            s.Hide();
+            s.Move(Direction.RIGHT);
+            s.Draw();
 
-            int x2 = 2;
-            int y2 = 3;
-            char c2 = '#';
+            //Stick stick = new Stick(6, 6, '*');
+            //stick.Draw();
 
-            Draw(x2, y2, c2);
+
+            // Point p1 = new Point(2,3,'*');
+            // p1.Draw();
+
+            // Point p2 = new Point()
+            // {
+            //   x = 4,
+            //    y = 5,
+            //   c = '#'
+
+            // };
+
+            //  p2.Draw();
 
             Console.ReadLine();
 
-            static void Draw(int x, int y, char c)
-            {
-                Console.SetCursorPosition(x, y);
-                Console.WriteLine(c);
-            }
+           
         }
     }
 }

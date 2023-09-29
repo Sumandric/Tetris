@@ -19,6 +19,11 @@ namespace Tetris
 
         }
 
-        
+        public override void Rotate()
+        {
+            
+        }
+
+
     }
 }

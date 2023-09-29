@@ -11,7 +11,13 @@ namespace Tetris
             Console.SetBufferSize(40, 30);
 
                     
-            Square s = new Square(2, 5, '*');
+            Figure s = new Stick(2, 5, '*');
+
+            s.Draw();
+            Thread.Sleep(1000);
+
+            s.Hide();
+            s.Rotate();
             s.Draw();
 
             Thread.Sleep(1000);
@@ -32,7 +38,7 @@ namespace Tetris
             s.Draw();
             Thread.Sleep(1000);
             s.Hide();
-            s.Move(Direction.RIGHT);
+            s.Rotate();
             s.Draw();
 
             //Stick stick = new Stick(6, 6, '*');

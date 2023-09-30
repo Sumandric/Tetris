@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Emit;
 using System.Security;
 
 namespace Tetris
@@ -11,58 +12,80 @@ namespace Tetris
             Console.SetBufferSize(40, 30);
 
             FigureGenerator generator = new FigureGenerator(20, 0, '*');
+            Figure s = null;
 
+            while (true)
+            {
+                FigureFall(s,generator);
 
-            Figure s = generator.GetNewFigure();
-
-            s.Draw();
-            Thread.Sleep(1000);
-
-            s.Hide();
-            s.Rotate();
-            s.Draw();
-
-            Thread.Sleep(1000);
-            s.Hide();
-            s.Move(Direction.LEFT);
-            s.Draw();
-            Thread.Sleep(1000);
-            s.Hide();
-            s.Move(Direction.DOWN);
-            s.Draw();
-            Thread.Sleep(1000);
-            s.Hide();
-            s.Move(Direction.DOWN);
-            s.Draw();
-            Thread.Sleep(1000);
-            s.Hide();
-            s.Move(Direction.RIGHT);
-            s.Draw();
-            Thread.Sleep(1000);
-            s.Hide();
-            s.Rotate();
-            s.Draw();
-
-            //Stick stick = new Stick(6, 6, '*');
-            //stick.Draw();
-
-
-            // Point p1 = new Point(2,3,'*');
-            // p1.Draw();
-
-            // Point p2 = new Point()
-            // {
-            //   x = 4,
-            //    y = 5,
-            //   c = '#'
-
-            // };
-
-            //  p2.Draw();
-
-            Console.ReadLine();
-
-           
+                s.Draw();
+            } 
         }
+
+        static void FigureFall(Figure fig, FigureGenerator generator)
+        {
+            fig = generator.GetNewFigure();
+            fig.Draw();
+
+            for (int i = 0; i < 15; i++)
+            {
+                fig.Hide();
+                fig.Move(Direction.DOWN);
+                fig.Draw();
+                Thread.Sleep(200);
+            }
+
+        }
+
+        //Figure s = generator.GetNewFigure();
+
+        //s.Draw();
+        //Thread.Sleep(1000);
+
+        //s.Hide();
+        //s.Rotate();
+        //s.Draw();
+
+        //Thread.Sleep(1000);
+        //s.Hide();
+        //s.Move(Direction.LEFT);
+        //s.Draw();
+        //Thread.Sleep(1000);
+        //s.Hide();
+        //s.Move(Direction.DOWN);
+        //s.Draw();
+        //Thread.Sleep(1000);
+        //s.Hide();
+        //s.Move(Direction.DOWN);
+        //s.Draw();
+        //Thread.Sleep(1000);
+        //s.Hide();
+        //s.Move(Direction.RIGHT);
+        //s.Draw();
+        //Thread.Sleep(1000);
+        //s.Hide();
+        //s.Rotate();
+        //s.Draw();
+
+        //Stick stick = new Stick(6, 6, '*');
+        //stick.Draw();
+
+
+        // Point p1 = new Point(2,3,'*');
+        // p1.Draw();
+
+        // Point p2 = new Point()
+        // {
+        //   x = 4,
+        //    y = 5,
+        //   c = '#'
+
+        // };
+
+        //  p2.Draw();
+
+        //console.readline();
+
+
     }
 }

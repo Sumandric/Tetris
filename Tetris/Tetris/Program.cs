@@ -17,7 +17,6 @@ namespace Tetris
             while (true)
             {
                 FigureFall(s,generator);
-
                 s.Draw();
             } 
         }

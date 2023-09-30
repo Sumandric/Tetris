@@ -17,6 +17,7 @@ namespace Tetris
             _c = c;
         }
 
+
         public Figure GetNewFigure()
         {
             if (_rand.Next(0, 2) == 0)

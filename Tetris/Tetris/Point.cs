@@ -16,6 +16,7 @@ namespace Tetris
         {
             Console.SetCursorPosition(x, y);
             Console.WriteLine(c);
+            Console.SetCursorPosition(0, 0);
 
         }
 
@@ -42,6 +43,12 @@ namespace Tetris
             Console.Write(" ");
         }
 
+        public Point(Point p)
+        {
+            x=p.x;
+            y=p.y;
+            c=p.c;
+        }
         public Point(int a, int b, char sym)
         {
             x = a;

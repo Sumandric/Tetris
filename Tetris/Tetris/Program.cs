@@ -8,8 +8,8 @@ namespace Tetris
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(40, 30);
-            Console.SetBufferSize(40, 30);
+            Console.SetWindowSize(Field.WIDHT, Field.HEIGHT);
+            Console.SetBufferSize(Field.WIDHT, Field.HEIGHT);
 
             FigureGenerator generator = new FigureGenerator(20, 0, '*');
             Figure currientFigure = generator.GetNewFigure();
@@ -29,14 +29,19 @@ namespace Tetris
             switch (key.Key)
             {
                 case ConsoleKey.LeftArrow:
-                    currientFigure.Move(Direction.LEFT);
+                    currientFigure.TryMove(Direction.LEFT);
                     break;
-                case ConsoleKey.RightArrow: 
-                    currientFigure.Move(Direction.RIGHT);
+                case ConsoleKey.RightArrow:
+                    currientFigure.TryMove(Direction.RIGHT);
                     break;
                 case ConsoleKey.DownArrow:
-                    currientFigure.Move(Direction.DOWN);
+                    currientFigure.TryMove(Direction.DOWN);
                     break;
+                case ConsoleKey.Spacebar:
+                    currientFigure.TryRotate();
+                    break;
+
+
 
 
             }

@@ -6,40 +6,53 @@ namespace Tetris
 {
     class Program
     {
+        static FigureGenerator generator;
         static void Main(string[] args)
         {
-            Console.SetWindowSize(Field.WIDHT, Field.HEIGHT);
-            Console.SetBufferSize(Field.WIDHT, Field.HEIGHT);
-
-            FigureGenerator generator = new FigureGenerator(20, 0, '*');
+            Console.SetWindowSize(Field.Width, Field.Height);
+            Console.SetBufferSize(Field.Width, Field.Height);
+                      
+           
+            generator = new FigureGenerator(20, 0, '*');
             Figure currientFigure = generator.GetNewFigure();
+            
 
             while (true)
             {
                 if (Console.KeyAvailable)
                 {
-                   ConsoleKeyInfo key = Console.ReadKey();  
-                   HandleKey(currientFigure, key);
+                   var key = Console.ReadKey(); 
+                   var result = HandleKey(currientFigure, key.Key);  
+                   ProcessResult(result, ref currientFigure);
                 }
             } 
         }
-
-        private static void HandleKey(Figure currientFigure, ConsoleKeyInfo key)
+        
+        private static bool ProcessResult(Result result, ref Figure currientFigure)
         {
-            switch (key.Key)
+            if (result == Result.HEAP_STRIKE || result == Result.DOWN_BORDER_STRIKE)
+            {
+                Field.AddFigure(currientFigure);
+                currientFigure = generator.GetNewFigure();
+                return true;
+            }
+            else
+                return false;
+        }
+        private static Result HandleKey(Figure f, ConsoleKey key)
+        {
+            switch (key)
             {
                 case ConsoleKey.LeftArrow:
-                    currientFigure.TryMove(Direction.LEFT);
-                    break;
+                    return f.TryMove(Direction.LEFT);
                 case ConsoleKey.RightArrow:
-                    currientFigure.TryMove(Direction.RIGHT);
-                    break;
+                    return f.TryMove(Direction.RIGHT);
                 case ConsoleKey.DownArrow:
-                    currientFigure.TryMove(Direction.DOWN);
-                    break;
+                    return f.TryMove(Direction.DOWN);
                 case ConsoleKey.Spacebar:
-                    currientFigure.TryRotate();
-                    break;
+                    return f.TryRotate();
+            }
+            return Result.SUCESS;
 
 
 
@@ -47,4 +60,5 @@ namespace Tetris
             }
         }
     }
-}
+
+
